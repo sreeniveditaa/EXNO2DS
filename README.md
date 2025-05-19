@@ -23,7 +23,44 @@ STEP 7: Use cross tabulation method to quantitatively analyze the relationship b
 STEP 8: Use heatmap method of representation to show relationships between two variables, one plotted on each axis.
 
 ## CODING AND OUTPUT
-        <<INCLUDE YOUR CODING AND OUTPUT SCREENSHOTS>>
+
+```
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+df=pd.read_csv("/content/titanic_dataset.csv")
+df
+
+```
+```
+df.head(10)
+```
+```
+df.tail(10)
+```
+```
+df.info()
+```
+```
+df.describe()
+```
+```
+df.shape
+```
+```
+df.set_index("PassengerId",inplace=True)
+df["Survived"].value_counts()
+```
+```
+per=(df["Survived"].value_counts()/df.shape[0]*100).round(2)
+per
+```
+```
+sns.countplot(data=df,x="Survived")
+```
+
+
 
 # RESULT
         <<INCLUDE YOUR RESULT HERE>>
